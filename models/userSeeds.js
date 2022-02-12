@@ -1,0 +1,43 @@
+const userSeeds = [
+  {
+    name: 'Theo',
+    id: 'S1234569C',
+    gender: 'M',
+    age: 60,
+    latitude: 1.2857,
+    longitude: 103.8269,
+    safety: 1,
+    emotion: 'depressed',
+    situation: 'broke',
+    perpetrator: 'self',
+    companion: false,
+  },
+  {
+    name: 'Lily',
+    id: 'T1234568A',
+    gender: 'F',
+    age: 12,
+    latitude: 1.2765,
+    longitude: 103.8459,
+    safety: 0,
+    emotion: 'scared',
+    situation: 'violence',
+    perpetrator: 'parent',
+    companion: true,
+  },
+  {
+    name: 'Isaac',
+    id: 'T1234567A',
+    gender: 'M',
+    age: '10',
+    latitude: 1.275,
+    longitude: 103.8436,
+    safety: 5,
+    emotion: 'angry',
+    situation: 'provoked',
+    perpetrator: 'unknown',
+    companion: false,
+  },
+];
+
+module.exports = userSeeds;
