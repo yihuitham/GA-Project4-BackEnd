@@ -1,4 +1,4 @@
-const app = require('./app');
+const { app, httpServer } = require('./app');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
@@ -13,4 +13,8 @@ mongoose.connect(MONGO_URL).then(async () => {
   app.listen(PORT, () => {
     console.log('Ameliorate backend app listening on', PORT);
   });
+});
+
+httpServer.listen(3000, () => {
+  console.log('socket io listening on 3000');
 });

@@ -1,0 +1,8 @@
+### Admin login
+POST http://localhost:4000/api/auth
+Content-Type: application/json
+
+{
+    "username": "monica",
+    "password": "monicaONE"
+}

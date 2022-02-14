@@ -1,2 +1,12 @@
 ### Seed users
 POST http://localhost:4000/api/user/seed
+
+### Create user
+
+### Read users
+GET http://localhost:4000/api/user
+
+### Update user
+
+### Delete all users
+DELETE http://localhost:4000/api/user/delete/all

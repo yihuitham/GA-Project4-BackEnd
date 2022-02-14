@@ -22,6 +22,11 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.delete('/delete/all', async (req, res) => {
+  await User.deleteMany();
+  res.send('User database deleted');
+});
+
 router.post('/seed', async (req, res) => {
   const seededUsers = await User.create(userSeeds);
   res.send(seededUsers);
