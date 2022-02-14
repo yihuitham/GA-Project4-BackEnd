@@ -3,11 +3,12 @@ const router = express.Router();
 
 const User = require('../models/user');
 const userSeeds = require('../models/userSeeds');
+const authenticate = require('../middleware/authenticate');
 
-router.get('/', async (req, res) => {
+router.get('/all', authenticate, async (req, res) => {
   try {
     const allUsers = await User.find({});
-    res.send(allUsers);
+    res.status(200).send(allUsers);
   } catch (error) {
     res.send(error);
   }
