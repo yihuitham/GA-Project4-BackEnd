@@ -9,7 +9,7 @@ const userSeeds = [
     safety: 1,
     emotion: 'depressed',
     situation: 'broke',
-    perpetrator: 'self',
+    perpetrator: 'Self',
     companion: false,
   },
   {
@@ -19,10 +19,10 @@ const userSeeds = [
     age: 12,
     latitude: 1.2765,
     longitude: 103.8459,
-    safety: 0,
+    safety: 10,
     emotion: 'scared',
     situation: 'violence',
-    perpetrator: 'parent',
+    perpetrator: 'Parent',
     companion: true,
   },
   {
@@ -35,7 +35,7 @@ const userSeeds = [
     safety: 5,
     emotion: 'angry',
     situation: 'provoked',
-    perpetrator: 'unknown',
+    perpetrator: 'Unknown',
     companion: false,
   },
 ];

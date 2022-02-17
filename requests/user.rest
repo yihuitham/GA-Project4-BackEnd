@@ -2,6 +2,22 @@
 POST http://localhost:4000/api/user/seed
 
 ### Create user
+POST http://localhost:4000/api/user/
+Content-Type: application/json
+
+{
+    "name": "Clinton",
+    "id": "T1234580L",
+    "gender": "M",
+    "age": 35,
+    "latitude": 1.2733085,
+    "longitude": 103.8439618,
+    "safety": 2,
+    "emotion": "sad",
+    "situation": "eliminated from The Apprentice",
+    "perpetrator": "self",
+    "companion": false
+  }
 
 ### Read users
 GET http://localhost:4000/api/user/all

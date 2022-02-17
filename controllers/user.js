@@ -17,7 +17,7 @@ router.get('/all', authenticate, async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const newUser = await User.create(req.body);
-    res.status(201).send(newUser);
+    res.status(201).send(newUser._id);
   } catch (error) {
     res.send(error);
   }

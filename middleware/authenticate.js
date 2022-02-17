@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
   }
   try {
     const payload = jwt.verify(token, accessToken);
-    console.log(payload);
+    // console.log(payload);
     next();
   } catch (error) {
     res.status(400).send({ error: 'Invalid token.' });

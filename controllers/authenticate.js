@@ -19,7 +19,8 @@ router.post('/', async (req, res) => {
         { username, access: 'admin' },
         process.env.ACCESS_TOKEN_SECRET
       );
-      return res.json({ token });
+      const capUsername = username.charAt(0).toUpperCase() + username.slice(1);
+      return res.json({ token, username: capUsername });
     } else {
       return res.status(403).json({ error: 'Invalid credentials' });
     }

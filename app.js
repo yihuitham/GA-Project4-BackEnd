@@ -8,12 +8,17 @@ const io = new Server(httpServer);
 io.use((socket, next) => {
   const token = socket.handshake.auth.token;
   console.log(token);
+  if (token !== 'abc') return;
   next();
 });
 
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.emit('hello', 'world');
+  socket.on('submitForm', () => {
+    console.log('a form has been submitted');
+    io.emit('newUser');
+  });
 });
 
 const admin = require('./controllers/admin');

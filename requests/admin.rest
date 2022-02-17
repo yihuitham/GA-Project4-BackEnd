@@ -1,6 +1,7 @@
 ### Seed users
 POST http://localhost:4000/api/admin/seed
 
+
 ### Create user
 POST http://localhost:4000/api/admin
 Content-Type: application/json
