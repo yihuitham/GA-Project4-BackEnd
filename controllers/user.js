@@ -9,7 +9,10 @@ const authenticate = require('../middleware/authenticate');
 //read all users
 router.get('/all', authenticate, async (req, res) => {
   try {
-    const allUsers = await User.find({ caseClosed: false });
+    const allUsers = await User.find({
+      caseClosed: false,
+      requestCancelled: false,
+    });
     res.status(200).send(allUsers);
   } catch (error) {
     res.send(error);
@@ -63,6 +66,24 @@ router.patch('/closecase/:id', authenticate, async (req, res) => {
       { new: true }
     );
     res.status(200).send({ message: 'Case closed.' });
+  } catch (error) {
+    return res.status(500).send({ message: 'Unexpected Error' });
+  }
+});
+
+//update user to cancel request
+router.patch('/cancel/:id', async (req, res) => {
+  const id = req.params.id;
+  try {
+    const foundUser = await User.findOne({ id });
+    if (!foundUser)
+      return res.status(404).send({ message: 'User ID not found.' });
+    const cancelledrequest = await User.findOneAndUpdate(
+      { id },
+      { requestCancelled: true },
+      { new: true }
+    );
+    res.status(200).send(cancelledrequest);
   } catch (error) {
     return res.status(500).send({ message: 'Unexpected Error' });
   }

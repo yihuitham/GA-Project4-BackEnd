@@ -14,6 +14,7 @@ const userSchema = mongoose.Schema(
     perpetrator: { type: String, required: true },
     companion: { type: Boolean, required: true },
     caseClosed: { type: Boolean, required: true, default: false },
+    requestCancelled: { type: Boolean, required: true, default: false },
   },
   { timestamps: true }
 );
