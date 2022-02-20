@@ -14,10 +14,9 @@ io.use((socket, next) => {
 
 io.on('connection', (socket) => {
   console.log('a user connected');
-  socket.emit('hello', 'world');
   socket.on('submitForm', () => {
     console.log('a form has been submitted');
-    io.emit('newUser');
+    // socket.emit('newUser');
   });
 });
 
@@ -32,4 +31,4 @@ app.use('/api/auth', authenticate);
 app.use('/api/admin', admin);
 app.use('/api/user', user);
 
-module.exports = { app, httpServer };
+module.exports = { app, httpServer, io };

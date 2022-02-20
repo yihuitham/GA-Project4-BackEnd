@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+const io = require('../app');
 const User = require('../models/user');
 const userSeeds = require('../models/userSeeds');
 const authenticate = require('../middleware/authenticate');
@@ -16,8 +17,14 @@ router.get('/all', authenticate, async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const newUser = await User.create(req.body);
-    res.status(201).send(newUser._id);
+    const idExist = await User.findOne({ id: req.body.id, caseClosed: false });
+    if (!idExist) {
+      const newUser = await User.create(req.body);
+      res.status(201).send({ id: newUser.id });
+      console.log(newUser.id);
+    } else {
+      res.status(406).send({ message: 'User ID exists and case is open' });
+    }
   } catch (error) {
     res.send(error);
   }
