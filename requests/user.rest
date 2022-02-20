@@ -15,7 +15,7 @@ Content-Type: application/json
     "safety": 2,
     "emotion": "sad",
     "situation": "eliminated from The Apprentice",
-    "perpetrator": "self",
+    "perpetrator": "Self",
     "companion": false
   }
 
@@ -23,7 +23,34 @@ Content-Type: application/json
 GET http://localhost:4000/api/user/all
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1vbmljYSIsImFjY2VzcyI6ImFkbWluIiwiaWF0IjoxNjQ0ODIyNjM4fQ.jpatVkgPikLCkEeJqoDNMLITPRtxJmPvqy4UFl3GGn8
 
+### Update user to close case
+PATCH  http://localhost:4000/api/user/closecase/SDF
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Implc3NpY2EiLCJhY2Nlc3MiOiJhZG1pbiIsImlhdCI6MTY0NTMzODI2NX0.0ADlEVnGWljNajPUGELpvraZE6n-N024vgZyLBSqBfA
+
+### Read user
+GET http://localhost:4000/api/user/T1234568A
+
 ### Update user
+PUT http://localhost:4000/api/user/edit
+Content-Type: application/json
+
+{
+    "name": "Clinton",
+    "id": "T1234580L",
+    "gender": "F",
+    "age": 35,
+    "latitude": 1.2733085,
+    "longitude": 103.8439618,
+    "safety": 2,
+    "emotion": "happy",
+    "situation": "eliminated from The Apprentice",
+    "perpetrator": "self",
+    "companion": false
+}
+
+
+
+
 
 ### Delete all users
 DELETE http://localhost:4000/api/user/delete/all

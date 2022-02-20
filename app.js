@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const methodOverride = require('method-override');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
 const httpServer = createServer(app);
@@ -26,6 +27,7 @@ const user = require('./controllers/user');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 
 app.use('/api/auth', authenticate);
 app.use('/api/admin', admin);
