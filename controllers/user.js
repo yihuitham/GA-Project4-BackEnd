@@ -89,6 +89,25 @@ router.patch('/cancel/:id', async (req, res) => {
   }
 });
 
+//update user's location
+router.patch('/location/:id', async (req, res) => {
+  const id = req.params.id;
+  try {
+    const foundUser = await User.findOne({ id });
+    if (!foundUser)
+      return res.status(404).send({ message: 'User ID not found.' });
+    const { latitude, longitude } = req.body;
+    const locationUpdate = await User.findOneAndUpdate(
+      { id },
+      { latitude, longitude },
+      { new: true }
+    );
+    res.status(200).send(locationUpdate);
+  } catch (error) {
+    return res.status(500).send({ message: 'Unexpected Error' });
+  }
+});
+
 //read single user
 router.get('/:id', async (req, res) => {
   try {

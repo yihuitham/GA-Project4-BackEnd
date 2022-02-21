@@ -3,8 +3,8 @@ POST http://localhost:4000/api/user/
 Content-Type: application/json
 
 {
-    "name": "Clinton",
-    "id": "T1234580L",
+    "name": "Billy",
+    "id": "T1234580Z",
     "gender": "M",
     "age": 35,
     "latitude": 1.2733085,
@@ -46,6 +46,15 @@ Content-Type: application/json
     "situation": "eliminated from The Apprentice",
     "perpetrator": "self",
     "companion": false
+}
+
+### Update user's location
+PATCH http://localhost:4000/api/user/location/T1234580L
+Content-Type: application/json
+
+{
+    "latitude": 1.3,
+    "longitude": 103.8439618
 }
 
 ### Delete all users
