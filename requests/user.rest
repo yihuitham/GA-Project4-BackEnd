@@ -3,8 +3,8 @@ POST http://localhost:4000/api/user/
 Content-Type: application/json
 
 {
-    "name": "Billy",
-    "id": "T1234580Z",
+    "name": "Clinton",
+    "id": "T1234580L",
     "gender": "M",
     "age": 35,
     "latitude": 1.2730,
@@ -39,8 +39,8 @@ Content-Type: application/json
     "id": "T1234580L",
     "gender": "F",
     "age": 35,
-    "latitude": 1.2730,
-    "longitude": 103.8424,
+    "latitude": 1.27511,
+    "longitude": 103.847675,
     "safety": 2,
     "emotion": "happy",
     "situation": "eliminated from The Apprentice",
