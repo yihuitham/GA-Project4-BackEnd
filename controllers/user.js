@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const io = require('../app');
 const User = require('../models/user');
 const userSeeds = require('../models/userSeeds');
 const authenticate = require('../middleware/authenticate');

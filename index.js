@@ -15,6 +15,6 @@ mongoose.connect(MONGO_URL).then(async () => {
   });
 });
 
-httpServer.listen(3000, () => {
-  console.log('socket io listening on 3000');
-});
+// httpServer.listen(3000, () => {
+//   console.log('socket io listening on 3000');
+// });

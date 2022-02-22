@@ -9,17 +9,14 @@ require('dotenv').config();
 
 io.use((socket, next) => {
   const token = socket.handshake.auth.token;
-  console.log(token);
+  console.log('token', token);
   if (token !== process.env.SOCKET_TOKEN) return;
   next();
 });
 
 io.on('connection', (socket) => {
   console.log('a user connected');
-  socket.on('submitForm', () => {
-    console.log('a form has been submitted');
-    // socket.emit('newUser');
-  });
+  socket.emit('hello', 'world');
 });
 
 const admin = require('./controllers/admin');
