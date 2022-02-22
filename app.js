@@ -5,11 +5,12 @@ const { createServer } = require('http');
 const { Server } = require('socket.io');
 const httpServer = createServer(app);
 const io = new Server(httpServer);
+require('dotenv').config();
 
 io.use((socket, next) => {
   const token = socket.handshake.auth.token;
   console.log(token);
-  if (token !== 'abc') return;
+  if (token !== process.env.SOCKET_TOKEN) return;
   next();
 });
 
